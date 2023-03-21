@@ -30,3 +30,6 @@ B = igrfmagm(altitude, lat, lon, year, igrf_ver)
 註：由於經度的 -180 與 180 對應的是同一條經度線，故只需要取其中一個即可，否則將會重複計算到同一點之資料。  
 為了分析 SAA 隨時間之變化，需要獲不同時間的地磁數據，我們設定時間範圍為 1900 年至 2020 年，每 5 年一筆數據，並將數據依照年份 yyyy 命名其檔名為 B_total_yyyy.mat 儲存在 [data](./data) 路徑中。在 [IGRF_data.m](./IGRF_data.m) 中我們透過迴圈處裡簡化 IGRF 地磁資料的獲取過程。 
 
+### 繪圖
+透過 [plot_SAA_from_IGRF_data.m](./plot_SAA_from_IGRF_data.m) 即可得到 1900 年至 2020 年全球地表磁場隨時間變化之 GIF，其中 SAA 區域 （B_SAA < 32000 nT）以深藍色標示，圖中可以觀察到 SAA 在 1900 年至 2020 年間有逐漸擴張的趨勢。
+![SAA from IGRF-13](./fig/SAA_from_IGRF_data.gif)
